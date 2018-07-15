@@ -1,0 +1,17 @@
+---
+- name: vars demo playbook
+  hosts: linux
+  user: user
+  sudo: yes
+  connection: ssh
+  gather_facts: false
+  vars:
+   name: vinay
+   age: 26
+  vars_files:
+   - varfiles/file1.yml
+   - varfiles/file2.yml
+  vars_prompt:
+   - name: sample_variable
+     prompt: Enter varaible value for sample_variable
+  

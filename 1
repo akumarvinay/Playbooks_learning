@@ -1,0 +1,12 @@
+---
+- hosts: linux
+  become: true
+  become_method: sudo
+  vars:
+    name: vinay
+    task: yamlfile
+  tasks:
+  - name: "Installing git"
+    yum: pkg=git state=present update_cache=true
+  - name: "Executing shell command"
+    shell: 'echo {{name}}'

@@ -1,0 +1,12 @@
+---
+- name: Playbook file
+  hosts: linux
+  become: true
+  become_method: sudo
+  vars_files:
+  - vars.yml
+  tasks:
+  - name: "Installing lynx server"
+    yum: pkg=git state=present
+  - name: "Verifying vars file content"
+    shell: 'echo {{name}}'
