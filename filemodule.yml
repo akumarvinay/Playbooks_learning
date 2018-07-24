@@ -1,0 +1,17 @@
+---
+- name: File module Copy module command module
+  hosts: linux
+  become: true
+  become_method: sudo
+  tasks:
+  - file:
+     path: /tmp/etc
+     state: directory
+     owner: root
+  - file:
+     src: /etc/fstab
+     dest: /tmp/etc/fstab
+     owner: root
+     mode: 700
+  - name: "Testing file content"
+    command: "cat /tmp/etc/fstab"

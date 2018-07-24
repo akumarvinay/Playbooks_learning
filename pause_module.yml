@@ -1,0 +1,15 @@
+---
+- name: Pause module
+  hosts: linux
+  user: user
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Install httpd
+    yum: pkg=httpd state=present
+  - pause:
+#      seconds: 3
+      prompt: "make sure installation is complete....!"
+  - name: lynx installation
+    yum: pkg=lynx state=present

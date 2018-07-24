@@ -1,0 +1,14 @@
+---
+- name: "Basic error handling"
+  hosts: linux
+  user: user
+  sudo: yes
+  connection: ssh
+  gather_facts: true
+  tasks:
+  - name: "Error invoking command"
+    command: /bin/false
+    ignore_errors: true
+  - name: "Package installation for telnet"
+    yum: pkg="telnet" state=present
+  
