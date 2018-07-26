@@ -1,0 +1,17 @@
+---
+- name: "Service module"
+  hosts: linux
+  user: user
+  connection: ssh
+  sudo: yes
+  gather_facts: yes
+  tasks:
+  - name: "Installing httpd in Client nodes"
+    yum:
+     pkg: httpd
+     state: present
+  - name: "starting httpd service using service module"
+    service:
+      name: httpd
+#      state: started
+      state: stopped

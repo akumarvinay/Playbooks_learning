@@ -1,0 +1,7 @@
+#handlers:
+---
+- name: Restart_httpd
+  service: name=httpd state=restarted
+#
+#    name: httpd
+#    state: restarted

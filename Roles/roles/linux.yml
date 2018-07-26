@@ -1,0 +1,8 @@
+--- # Master playbook
+- hosts: linux
+  user: user
+  sudo: yes
+  connection: ssh
+  gather_facts: yes
+  roles:
+    - linux  

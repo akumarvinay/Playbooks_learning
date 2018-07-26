@@ -1,0 +1,7 @@
+- name: Installing apache2 in client node
+  yum: pkg=httpd state=latest
+  notify: 
+  - Restart_httpd
+#   pkg: httpd
+#   state: latest
+#  notify: Restart HTTPD

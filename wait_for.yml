@@ -1,0 +1,12 @@
+---
+- name: "Wait for module implementation...!!"
+  hosts: linux
+  user: user
+  sudo: yes
+  gather_facts: true
+  connection: ssh
+  tasks:
+  - name: "Installing tomcat in client node"
+    yum: pkg=httpd state=present
+  - name: "Wait for module implementation"
+    wait_for: port=80 state=started
