@@ -5,3 +5,5 @@
 #   pkg: httpd
 #   state: latest
 #  notify: Restart HTTPD
+- name: Printing value from vars
+  shell: echo "{{copyright}}"
